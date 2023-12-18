@@ -1,0 +1,491 @@
+/* Media query for mobile */
+
+@media screen and (max-width: 1200px) {
+    .header__main {
+
+    }
+
+    .header__nav-adaptive {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header__active {
+        display: block;
+    }
+
+    .header__logo {
+        display: none;
+    }
+
+    .nav__list-title {
+        display: block;
+    }
+
+    .menu__btn {
+        display: flex;
+        width: 58px;
+        height: 24px;
+        cursor: pointer;
+        position: relative;
+        top: 10px;
+        z-index: 10;
+    }
+    
+    .menu__btn span {
+        width: 40px;
+        height: 3px;
+        display: block;
+        background-color: #000;
+        position: absolute;
+        left: 25px;
+    }
+    
+    .menu__btn span::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background-color: #000;
+        bottom: -10px;
+        left: 0px;
+    }
+    
+    .menu__btn span::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background-color: #000;
+        top: -10px;
+        left: 0px;
+    }
+
+    .nav__list {
+        position: absolute;
+        z-index: 5;
+        display: none;
+        background: var(--Burnt-Sienna-Linear);
+        flex-direction: column;
+        height: 100vh;
+        padding-top: 150px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform .3s ease;
+        overflow-y: hidden;
+    }
+    
+    .nav__list.nav__list--active {
+        transform: translateY(0);
+    }
+
+    .header__nav {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav__list-item {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav__list-title {
+
+    }
+
+    .nav__list-link {
+        font-size: var(--font-size-bold);
+    }
+
+    .header__sign { 
+
+    }
+
+    .button__sign {
+
+    }
+}
+
+@media screen and (max-width: 1048px) {
+    .header__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2.87rem 0 9rem 0;
+    }
+
+    .wrapper {
+        overflow: hidden;
+    }
+
+    .element__active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .element__inner {
+        margin-bottom: 0rem;
+    }
+
+    .element__inner::before {
+        top: 183px;
+        left: 246px;
+    }
+
+    .element__inner::after {
+        top: 529px;
+        left: -140px;
+    }
+
+    .element__block {
+        bottom: 165px;
+    }
+
+    .element__title {
+        width: 38.1rem;
+        height: 9.563rem;
+        left: -48px;
+    }
+
+    .element__desc {
+        position: relative;
+        left: -48px;
+    }
+
+    .myModal__block {
+        position: relative;
+        top: -76px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .element__title {
+        font-size: var(--font-size-bold);
+        width: 22.1rem;
+        height: 6.6rem;
+        left: 11px;
+    }
+
+    .element__desc {
+        font-size: var(--font-size-light);
+        left: 11px;
+        width: 330px;
+    }
+
+    .element__block {
+        width: 26.688rem;
+    }
+
+    .element__block-calc-body {
+
+    }
+
+    .element__block-input {
+        width: 23.8rem;
+    }
+
+}
+
+@media screen and (max-width: 470px) {
+
+}
+
+@media screen and (max-width: 435px) {
+    .element__block {
+        width: 24.688rem;
+    }
+
+    .element__block-input {
+        width: 21.8rem;
+    }
+
+    .element__title {
+        left: 34px;
+    }
+
+    .element__desc {
+        left: 34px;
+    }
+
+}
+
+@media screen and (max-width: 395px) {
+    .element__block {
+        width: 22.688rem;
+    }
+
+    .element__block-input {
+        width: 20.8rem;
+    }
+
+    .element__title {
+        left: 34px;
+    }
+
+    .element__desc {
+        left: 34px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .header__main {
+        margin: 1.5rem 0 3rem 0;
+    }
+
+    .header__title {
+        font-size: var(--font-size-semibold);
+        width: 12.1rem;
+        height: 7.6rem;
+        position: relative;
+        left: 62px;
+        line-height: 1.7rem;
+    }
+
+    .header__title::after {
+        position: absolute;
+        display: block;
+        left: 172px;
+        top: 10px;
+    }
+
+    .header__desc {
+    }
+
+    .header__inner {
+        margin-bottom: 2rem;
+    }
+
+    .header__table-link {
+        gap: 9rem;
+    }
+
+    .header__table {
+        width: 20.5rem;
+        position: relative;
+        left: 14px;
+    }
+
+    .header__table-alt {
+        width: 20.8rem;
+        height: 46rem;
+        left: 10px;
+        top: -5px;
+    }
+
+    .bitcoin__logo, 
+    .tether__logo {
+        padding: 0;
+        position: relative;
+        left: 13px;
+    }
+
+    .header__table-wallet {
+        padding: 0rem 1.2rem;
+    }
+
+    .header__table-bitcoin,
+    .header__table-tether,
+    .header__table-network,
+    .header__table-wallets {
+        width: 19rem;
+        position: relative;
+        left: -3px;
+    }
+
+    .bitcoin__info,
+    .tether__info {
+        position: relative;
+        left: -20px;
+    }
+
+    .header__table-payment,
+    .header__table-paid {
+        padding: 1.44rem 5rem;
+    }
+
+    .header__inner::after{
+        top: 312px;
+        left: -90px;
+    }
+    
+    .header__inner::before {
+        top: 177px;
+        right: -188px;
+    }
+
+    .header__context::after {
+        top: 101px;
+        left: 228px;
+    }
+
+    .header__context::before {
+        top: 263px;
+        right: 248px;
+    }
+
+    .info__textred {
+        font-size: var(--font-size-light);
+    }
+
+    .info__textsilver {
+        font-size: var(--font-size-light);
+    }
+
+    .search__main {
+
+    }
+
+    .search__inner::after {
+        top: 172px;
+        left: -66px;
+    }
+
+    .search__inner::before {
+        top: -47px;
+        left: 128px;
+    }
+
+    .search__title {
+
+    }
+
+    .search-desc {
+
+    }
+
+    .sign-lamp {
+        left: 126px;
+        top: 77px;
+    }
+
+    .sign-pic::after {
+        left: 39px;
+        top: 79px;
+    }
+
+    .sign-text {
+        padding-top: 170px;
+    }
+
+    .sign-desc {
+        font-size: var(--font-size-bold);
+    }
+
+    .element__active {
+        display: inline-block;
+    }
+
+    .element__inner {
+        
+    }
+
+    .element__inner::after {
+        left: -111px;
+        top: 334px;
+    }
+
+    .element__inner::before {
+        left: 194px;
+        top: 123px;
+    }
+
+    .element__title {
+        font-size: var(--font-size-bold);
+        width: 17.1rem;
+        height: 7.6rem;
+        position: relative;
+        left: 62px;
+        line-height: 2.7rem;
+    }
+
+    .element__desc {
+        width: 13rem;
+        font-size: var(--font-size-min);
+        position: relative;
+        left: 62px;
+        top: 25px;
+        line-height: 1rem;
+    }
+
+    .element__block {
+        width: 20.5rem;
+        height: 27.8rem;
+        top: -11px;
+        margin-left: 20px;
+    }
+
+    .element__block-calc-in {
+        margin-right: 0px;
+    }
+
+    .element__block-input {
+        width: 18rem;
+        position: relative;
+        left: -3px;
+    }
+
+    .element__block-calc-img {
+        right: 49px;
+    }
+
+    .myModal-content {
+        padding: 17px;
+    }
+
+    .myModal__block {
+        width: 21.5rem;
+    }
+    .element__block-input1 {
+        width: 18.8rem;
+    }
+
+    .element__block-btn {
+
+    }
+    .modal {
+    }
+
+    .modal::after {
+        top: 117px;
+        left: -100px;
+    }
+
+    .modal::before {
+        top: -90px;
+        right: -91px;
+    }
+
+    .modal__container {
+        height: 56.8rem;
+    }
+    .element__block-calc-img1 {
+        left: 278px;
+    }
+    .modal__label1 {
+        right: 18px;
+    }
+    .modal__label2 {
+        right: 18px;
+    }
+    .search__main {
+        width: 20.7rem;
+        height: 27.6rem;
+    }
+    .search__title {
+        padding: 2rem 0rem 2rem 0rem;
+    }
+    .search-pic {
+    }
+    .search-img {
+    }
+    .search-text {
+    }
+    .search-desc {
+        font-size: var(--font-size-medium);
+    }
+}

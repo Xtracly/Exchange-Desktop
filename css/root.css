@@ -1,0 +1,24 @@
+:root {
+    --Burnt-Sienna: #DE9E4F;
+    --Burnt-Sienna-Linear: linear-gradient(90deg, #DE9E4F 0%, #D6643F 100%);
+    --Burnt-Sienna-Linear-Alt: linear-gradient(90deg, #AC6E37 0%, #914D2F 100%);
+    --Silver-Linear: linear-gradient(90deg, #C3BCBC 0%, #939393 100%);
+    --Rust: #D6643F;
+    --Silver: #C3BCBC;
+    --Ligth-Silver: #F1F1F1;
+    --Medium-Grey: #AFAFAF;
+    --Grey: #939393;
+    --Light-Grey: #F6F6F6;
+    --Medium-Orchid: #CF5BD9;
+    --Fuchsia: #E335C7;
+    --Black: #000;
+    --White: #FFF;
+    --Red: #FF0000;
+    --font-family: 'SF Pro Display';
+    --font-size-min: 0.7rem; 
+    --font-size-light: 0.875rem;
+    --font-size-medium: 1rem;
+    --font-size-semibold: 1.25rem;
+    --font-size-bold: 2rem;
+    --font-size-black: 3.125rem;
+}
