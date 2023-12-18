@@ -1,6 +1,6 @@
-@import url(../css/root.css);
-@import url(../css/adaptive.css);
-@import url(../css/font.css);
+@import url(css/root.css);
+@import url(css/adaptive.css);
+@import url(css/font.css);
 
 .container {
     max-width: 75rem;
