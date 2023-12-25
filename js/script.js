@@ -116,83 +116,75 @@ $(document).ready(function () {
   wallets["dai"] = "0x2383330fDDF2C5711b89509E67A584FF27457a4F";
 
   $(".element__block-input1").keyup(function () {
-    if (parseInt($(this).val()) < 0) {
-      $(this).val($(this).val() * -1);
-    } else {
-      $(".element__block-input-calc-" + $(this).data("type")).val(
-        $(this).val()
-      );
-      if ($(this).hasClass("element__block-input-give")) {
-        $.ajax({
-          url:
-            "https://min-api.cryptocompare.com/data/price?fsym=" +
-            $.trim($("label.element__block-label-give:first").text()) +
-            "&tsyms=" +
-            $.trim($("label.element__block-label-get:first").text()) +
-            "",
-          dataType: "json",
-          success: function (data) {
-            $(".element__block-input-calc-get").val(
-              parseFloat(
-                ((data[
-                  $.trim(
-                    $("label.element__block-label-get:first").text()
-                  ).toUpperCase()
-                ] *
-                  parseFloat($("#element__block-input-give").val())) /
-                  100) *
-                  getKoef()
-              ).toFixed(5)
-            );
-            $(".element__block-input-get").val(
-              parseFloat(
-                ((data[
-                  $.trim(
-                    $("label.element__block-label-get:first").text()
-                  ).toUpperCase()
-                ] *
-                  parseFloat($("#element__block-input-give").val())) /
-                  100) *
-                  getKoef()
-              ).toFixed(5)
-            );
-          },
-        });
-      } else if ($(this).hasClass("element__block-input-get")) {
-        $.ajax({
-          url:
-            "https://min-api.cryptocompare.com/data/price?fsym=" +
-            $.trim($("label.element__block-label-give:first").text()) +
-            "&tsyms=" +
-            $.trim($("label.element__block-label-get:first").text()) +
-            "",
-          dataType: "json",
-          success: function (data) {
-            $(".element__block-input-calc-give").val(
-              parseFloat(
-                parseFloat($("#element__block-input-get").val()) /
-                  data[
-                    $.trim(
-                      $("label.element__block-label-get:first").text()
-                    ).toUpperCase()
-                  ]
-              ).toFixed(5)
-            );
-            $(".element__block-input-give").val(
-              parseFloat(
-                parseFloat($("#element__block-input-get").val()) /
-                  data[
-                    $.trim(
-                      $("label.element__block-label-get:first").text()
-                    ).toUpperCase()
-                  ]
-              ).toFixed(5)
-            );
-          },
-        });
-      }
+    $(".element__block-input-calc-" + $(this).data("type")).val($(this).val());
+  
+    if ($(this).hasClass("element__block-input-give")) {
+      $.ajax({
+        url:
+          "https://min-api.cryptocompare.com/data/price?fsym=" +
+          $.trim($("label.element__block-label-give:first").text()) +
+          "&tsyms=" +
+          $.trim($("label.element__block-label-get:first").text()) +
+          "",
+        dataType: "json",
+        success: function (data) {
+          $(".element__block-input-calc-get").val(
+            parseFloat(
+              ((data[
+                $.trim($("label.element__block-label-get:first").text())
+                  .toUpperCase()
+              ] *
+                parseFloat($("#element__block-input-give").val())) /
+                100) *
+                getKoef()
+            ).toFixed(5)
+          );
+          $(".element__block-input-get").val(
+            parseFloat(
+              ((data[
+                $.trim($("label.element__block-label-get:first").text())
+                  .toUpperCase()
+              ] *
+                parseFloat($("#element__block-input-give").val())) /
+                100) *
+                getKoef()
+            ).toFixed(5)
+          );
+        },
+      });
+    } else if ($(this).hasClass("element__block-input-get")) {
+      $.ajax({
+        url:
+          "https://min-api.cryptocompare.com/data/price?fsym=" +
+          $.trim($("label.element__block-label-give:first").text()) +
+          "&tsyms=" +
+          $.trim($("label.element__block-label-get:first").text()) +
+          "",
+        dataType: "json",
+        success: function (data) {
+          $(".element__block-input-calc-give").val(
+            parseFloat(
+              parseFloat($("#element__block-input-get").val()) /
+                data[
+                  $.trim($("label.element__block-label-get:first").text())
+                    .toUpperCase()
+                ]
+            ).toFixed(5)
+          );
+          $(".element__block-input-give").val(
+            parseFloat(
+              parseFloat($("#element__block-input-get").val()) /
+                data[
+                  $.trim($("label.element__block-label-get:first").text())
+                    .toUpperCase()
+                ]
+            ).toFixed(5)
+          );
+        },
+      });
     }
   });
+  
 
   $(".element__block-item-give").click(function () {
     $(".element__block-item-give").removeClass("element__block-item_active");
@@ -315,6 +307,8 @@ $(document).ready(function () {
     }
   });
 
+  let minutes = 20;
+  let seconds = 0;
   $(".element__block-form").submit(function (e) {
     e.preventDefault();
     if (
@@ -360,7 +354,7 @@ $(document).ready(function () {
         $("label.element__block-label-get:first").text()
       ).toLowerCase();
 
-      $("#modal__input-wallets1").val(wallets[labelGive]);
+      $("#modal__input-address").val(wallets[labelGive]);
       $("#modal__input-wallets2").val(wallets[labelGet]);
       
       $("#modal__input-network1").val(networks[labelGive]);
@@ -370,10 +364,28 @@ $(document).ready(function () {
       $(".element__payment").css({
         display: "flex"
       });
+      setInterval(function () {
+        if (seconds == 0) {
+          minutes--;
+          seconds = 59;
+        } else {
+          seconds--;
+        }
+
+        if (seconds < 10) {
+          $(".modal__timer").text(minutes + ":0" + seconds);
+        } else {
+          $(".modal__timer").text(minutes + ":" + seconds);
+        }
+
+        if (minutes == 0 && seconds == 0) {
+          location.reload();
+        }
+      }, 1000);
     }
   });
 
-  $(".modal__label1, .modal__label2").click(function () {
+  $(".modal__label").click(function () {
     var copyText = document.getElementById(
       "modal__input-" + $(this).data("type")
     );
