@@ -3,12 +3,14 @@
     --Burnt-Sienna-Linear: linear-gradient(90deg, #DE9E4F 0%, #D6643F 100%);
     --Burnt-Sienna-Linear-Alt: linear-gradient(90deg, #AC6E37 0%, #914D2F 100%);
     --Silver-Linear: linear-gradient(90deg, #C3BCBC 0%, #939393 100%);
+    --DarkSilver-Linear: linear-gradient(90deg, #b6b1b1 0%, #747070 100%);
     --Rust: #D6643F;
     --Silver: #C3BCBC;
     --Ligth-Silver: #F1F1F1;
     --Medium-Grey: #AFAFAF;
     --Grey: #939393;
     --Light-Grey: #F6F6F6;
+    --Semi-Grey: #959595;
     --Medium-Orchid: #CF5BD9;
     --Fuchsia: #E335C7;
     --Black: #000;
@@ -18,7 +20,11 @@
     --font-size-min: 0.7rem; 
     --font-size-light: 0.875rem;
     --font-size-medium: 1rem;
+    --font-size-semi-medium: 1.1rem;
     --font-size-semibold: 1.25rem;
+    --font-size-half-bold: 1.3rem;
+    --font-size-light-bold: 1.5625rem; 
     --font-size-bold: 2rem;
+    --font-size-medium-bold: 2.5rem;
     --font-size-black: 3.125rem;
 }
