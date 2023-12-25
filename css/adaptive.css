@@ -284,7 +284,7 @@
     }
 
     .element__inner {
-        left: 90px;
+        left: 125px;
     }
 
     .element__inner::before {
@@ -343,7 +343,7 @@
     }
 
     .element__inner {
-        left: 85px;
+        left: 75px;
     }
 
     .element__inner::before {
@@ -361,7 +361,6 @@
     }
 
     .element__text {
-        font-size: var(--font-size-medium);
     }
 
     .modal__text {
@@ -376,16 +375,10 @@
         font-size: var(--font-size-medium);
     }
 
-    .nav__list-title {
-        font-size: var(--font-size-medium);
-    }
-
     .search__title {
-        font-size: var(--font-size-medium);
     }
 
     .search-desc {
-        font-size: var(--font-size-medium);
     }
 
     .modal__text-sm {
@@ -393,21 +386,19 @@
     }
 
     .element__title {
-        font-size: var(--font-size-bold);
         width: 21.1rem;
         height: 6.6rem;
         left: 11px;
     }
 
     .element__desc {
-        font-size: var(--font-size-light);
         left: 11px;
-        width: 230px;
-        top: 18px;
+        width: 255px;
+        top: 42px;
     }
 
     .element__block {
-        width: 26.688rem;
+        
     }
 
     .element__payment {
@@ -419,7 +410,6 @@
     }
 
     .element__block-input {
-        width: 23.8rem;
     }
 
     .element__block-input1 {
@@ -428,6 +418,10 @@
 
     .element__block-input2 {
         width: 23.8rem;
+    }
+
+    .element__block-btn {
+        padding: 1.44rem 4.7rem;
     }
 
     .modal {
@@ -443,7 +437,7 @@
     }
 
     .modal__btn {
-        padding: 1.44rem 6.5rem;
+        padding: 1.44rem 5.5rem;
     }
 
     .search__inner {
@@ -485,18 +479,36 @@
     }
 }
 
+@media screen and (max-width: 485px) {
+    .element__block {
+        width: 25.688rem;
+        height: 26.8rem;
+    }
+
+    .element__block-input {
+        width: 22.8rem;
+    }
+
+    .element__block-input1 {
+        
+    }
+
+    .element__block-input2 {
+        width: 23.8rem;
+    }
+}
+
 @media screen and (max-width: 470px) {
     .element__payment {
         left: 9px;
     }
 
     .element__inner {
-        left: 85px;
-        /*width: 415px;
-        height: 180px;*/
+        left: 70px;
     }
     
     .element__inner::after {
+        width: 255px;
         top: 407px;
         left: -181px;
     }
@@ -581,7 +593,7 @@
     }
 
     .element__inner {
-        left: 70px;
+        left: 50px;
     }
 
     .element__inner::before {
@@ -681,7 +693,7 @@
     }
 
     .element__inner {
-        left: 70px;
+        left: 50px;
     }
 
     .element__inner::before {
@@ -762,6 +774,10 @@
         bottom: 200px;
     }
 
+    .nav__list-title {
+        font-size: var(--font-size-medium);
+    }
+
     .element__block-input {
         width: 17.8rem;
     }
@@ -825,6 +841,7 @@
         top: 35px;
         height: 2rem;
         margin-top: 2rem;
+        width: 185px;
     }
 
     .modal__container {
